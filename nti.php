@@ -1,31 +1,73 @@
+<?php
+ if($_SERVER['REQUEST_METHOD']=='POST'){
 
-<!DOCTYPE html>
-     <html> 
-     
-  </head>
-  <body> 
+      $name=$_POST['name'];
+      $password=$_POST['password'];
+      $email=$_POST['email'];
+
+
+if(empty($name) ||empty($password) ||empty($password) ){
+
+      echo "data required";
+}else{
+
+      echo "data valid";
+}
+
+ }
+
+
+
+?>
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Register</h2>
   
-   <table width="270px" cellspacing="0px" cellpadding="0px" >
   
-      <?php
-      for($row=1;$row<=8;$row++)
-	  {
-          echo "<tr>";
-          for($col=1;$col<=8;$col++)
-		  {
-          $total=$row+$col;
-          if($total%2==0)
-		  {
-          echo "<td height=30px width=30px bgcolor=#FFFFFF></td>";
-          }
-		  else
-		  {
-          echo "<td height=30px width=30px bgcolor=#000000></td>";
-          }
-          }
-          echo "</tr>";
-    }
-          ?>
-  </table>
-  </body>
-  </html>
+  <form   action="<?php echo $_SERVER['PHP_SELF'];?>"  method="post">
+
+
+  <div class="form-group">
+    <label for="exampleInputName">Name</label>
+    <input type="text" class="form-control" name="name" id="exampleInputName" aria-describedby="" >
+</div>
+
+
+<div class="form-group">
+    <label for="exampleInputName">Email</label>
+    <input type="text" class="form-control" name="email" id="exampleInputName" aria-describedby="" >
+</div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword">New Password</label>
+    <input type="password"   class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+  </div>
+ 
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
