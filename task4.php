@@ -3,17 +3,6 @@
 
 session_start();
 
-$_SESSION['name']="Khadija";
-$_SESSION['age']="26";
-$_SESSION['GPA']="10";
-
-
-
-// session_destroy();
-
-
-
-
 require "helpers.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -22,7 +11,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
  $email    = clean ($_POST['email']);
  $password = clean($_POST['password']);
  $address    =clean( $_POST['address']);
+ $gender     =clean($_POST['gender']) ;
  $linkedin   = clean( $_POST['linkedin']) ;
+
+
 
 $errors =[];
   if(empty($name)){
@@ -53,7 +45,12 @@ $errors['email']="invalid email";
 
     $errors['address']= "address  must be 10 characters ";
 
-  }if(empty($linkedin)){
+  }if(empty($gender)){
+
+    $errors['gender']= "gender is required";
+  }
+
+  if(empty($linkedin)){
 
     $errors['linkedin']= "linkedin  is required";
   }elseif( !filter_var($linkedin,FILTER_VALIDATE_URL)){
@@ -76,12 +73,55 @@ if(count($errors) > 0){
     }
    }else{
 
-       echo "valid data";
+       echo "valid data" .'<br>';
    }
 
+   //image validation
+   if(!empty($_FILES['image']['name'])){
 
-
-
+    $file_tmp=$_FILES['image']['tmp_name'];
+    $file_name= $_FILES['image']['name']; //name.png
+    $file_size=$_FILES['image']['size'];
+    $file_type=$_FILES['image']['type']; //image/png
+    
+    $file_x= explode('.',$file_name);
+    
+    $allowed_x=['png','jpg'];
+    
+    $updated_x=strtolower(end($file_x));
+    // echo $updated_x;
+    
+    if(in_array($updated_x,$allowed_x)){
+    
+      $finalname=rand().time().'.'.$updated_x;
+    
+      $dis_path='./uploads/'.$finalname;
+    
+    if(move_uploaded_file($file_tmp,$dis_path)){
+    
+      echo "image uploaded";
+    }else{
+    
+      echo "please try again";
+    }
+    }else{
+    
+    
+      echo "invalid extention ";
+    }
+    
+    }else{
+    
+      echo "image field required";
+    }
+    
+ $_SESSION['name']=$name;
+ $_SESSION['email']=$email;
+$_SESSION['password']=md5($password);
+$_SESSION['address']=$address;
+$_SESSION['gender']=$gender;
+$_SESSION['linkedin']=$linkedin;
+ $_SESSION['image']=$file_name;
 
 }
 ?>
@@ -103,7 +143,7 @@ if(count($errors) > 0){
   <h2>Register</h2>
   
   
-  <form   action="<?php echo $_SERVER['PHP_SELF'];?>"  method="post">
+  <form   action="<?php echo $_SERVER['PHP_SELF'];?>"  method="post" enctype="multipart/form-data" >
 
 
   <div class="form-group">
@@ -128,10 +168,26 @@ if(count($errors) > 0){
   </div>
  
   <div class="form-group">
+     <label>Gender</label>
+    <select name="gender" class="form-control">
+        <option selected="" disabled="">select gender</option>
+        <option value="male"  >Male</option>
+        <option value="female"  >Female</option>
+    </select>
+</div>
+
+
+
+
+  <div class="form-group">
     <label for="exampleInputPassword">Linked_in</label>
     <input type="text"   class="form-control" name="linkedin" id="exampleInputLinkedin" placeholder="Enter Linkedin ">
   </div>
 
+  <div class="form-group">
+    <label for="exampleInputPassword">Image</label>
+    <input type="file"  name="image">
+  </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
