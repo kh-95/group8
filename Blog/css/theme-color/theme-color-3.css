@@ -1,0 +1,144 @@
+/* ------------------------------------------------
+  Project:   Loptus - Digital Marketing Agency Responsive HTML5 Template
+  Author:    ThemeHt
+
+  NOTE: This is Color customizer stylesheet of template.
+------------------------------------------------ */
+
+/* ------------------------
+    General
+------------------------*/
+::-moz-selection { background: #ff5351; color: #fff; text-shadow: none; }
+::-moz-selection { background: #ff5351; color: #fff; text-shadow: none; }
+::selection { background: #ff5351; color: #fff; text-shadow: none; }
+
+ 
+/* ------------------------
+    Background Color
+------------------------*/
+.theme-bg,
+div.color-customizer a.opener,
+.btn:hover,
+.nav-item.dropdown .dropdown-menu a:hover,
+.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel .owl-nav button.owl-next:hover,
+.owl-carousel.owl-theme .owl-dots .owl-dot:hover span, .owl-carousel.owl-theme .owl-dots .owl-dot.active span,
+.portfolio-filter button.is-checked, .portfolio-filter button:hover,
+.scroll-top a,
+.tab .nav-tabs .nav-link.active, .tab .nav-tabs .nav-link:hover, .tab .nav-tabs.active > a:focus, .tab .nav-tabs > a:hover,
+.pagination > li.active .page-link, .page-link:hover, .page-link:focus,
+.section-title h6,
+.list-icon-2 li::before,
+.play-btn span::before,
+.ht-nav-toggle span,
+.ht-nav-toggle span::before, .ht-nav-toggle span::after,
+.step-num,
+.popup-link:hover,
+.testimonial,
+.testimonial.style-2 .testimonial-caption h5,
+.accordion .card.active a, .accordion .card a:hover,
+.accordion .card-header a span::before, .accordion .card-header a span::after,
+#ht-main-nav .ht-nav-toggle:hover span::before, #ht-main-nav .ht-nav-toggle:hover span::after,
+.footer-list li a:hover
+{ background-color: #ff5351;}
+
+
+ 
+/* ------------------------
+  Background Color Hover
+------------------------*/
+.btn.btn-theme, .step-num{ background: rgb(255,83,81); background: linear-gradient(90deg, rgba(255,83,81,1) 0%, rgba(252,42,126,1) 90%);  color: #ffffff;}
+.btn.btn-theme:hover,
+.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel .owl-nav button.owl-next:hover{background: rgb(255,83,81); background: linear-gradient(90deg, rgba(252,42,126,1) 0%, rgba(255,83,81,1) 90%);}
+
+/* ------------------------
+    Color
+------------------------*/
+a, button, input, 
+a:focus, a:hover,
+.text-theme,
+.loader,
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus, .navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-link.highlighted, #header-wrap.fixed-header .navbar-nav .nav-link.highlighted,
+.header-2 #header-wrap.fixed-header .search-button, .header-2 #header-wrap.fixed-header .navbar-nav .nav-link:hover, .header-2 #header-wrap.fixed-header .navbar-nav .nav-item .nav-link.active,
+h1 span,
+.btn-simple:hover,
+.btn.btn-white:hover,
+.btn.btn-white.btn-border:hover,
+.btn:focus, .btn.focus,
+.breadcrumb-item.active, .breadcrumb-item a:hover,
+.list-icon li i,
+.counter.style-2 h5,
+.tab.style-2 .nav-tabs .nav-link.active, .tab.style-2 .nav-tabs .nav-link:hover, .tab.style-2 .nav-tabs.active > a:focus, .tab.style-2 .nav-tabs > a:hover,
+.team-member .team-description span,
+.team-member .team-social-icon ul li a:hover,
+.price-title,
+.price-list li i,
+.post .post-desc .post-date,
+.post .post-desc h5 a:hover,
+.post-author span,
+.portfolio-title span,
+.search-button,
+.widget .widget-categories li a:hover,
+.widget .recent-post-desc a:hover,
+.portfolio-meta li i,
+.countdown > li p,
+.contact-info li i,
+.contact-info li a:hover,
+.sidebar-links li.active a, .sidebar-links li a:hover,
+.team-description .team-icon li a:hover,
+.scroll-top a:hover, .scroll-top a:focus
+{color: #ff5351;}
+
+
+/* ------------------------
+    Border Color
+------------------------*/
+.owl-carousel.owl-theme .owl-dots .owl-dot span::before,
+.form-control:focus,
+.reply a:hover,
+.pagination > li.active .page-link, .page-link:hover, .page-link:focus,
+.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel .owl-nav button.owl-next:hover,
+.search-input
+{border-color: #ff5351;}
+
+.round-p-animation{border-color: rgba(255,83,81,0.1);}
+
+/* ------------------------
+  Border Color Hover
+------------------------*/
+.btn.btn-theme:hover,
+.btn.btn-border{border-color: #fc2a7e}
+
+.testimonial::before,
+.tab.style-2 .nav-tabs .nav-link.active, .tab.style-2 .nav-tabs .nav-link:hover, .tab.style-2 .nav-tabs.active > a:focus, .tab.style-2 .nav-tabs > a:hover
+{border-top-color: #ff5351;}
+
+/* ------------------------
+    Round Animated Image
+------------------------*/
+.round-animation{background-image: linear-gradient(120deg, #ff5351 0%, #fc2a7e 100%);}
+.round-animation:before,
+.round-animation:after{background-image: linear-gradient(120deg, rgba(255,83,81,.55) 0%, rgba(252,42,126,.89) 100%);}
+
+
+[data-overlay].grediant-overlay:before{background: rgb(255,83,81); background: linear-gradient(90deg, rgba(255,83,81,1) 0%, rgba(252,42,126,1) 50%);}
+
+
+@media (max-width: 992px){
+
+/* ------------------------
+    Background Color
+------------------------*/
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active, .navbar-nav .nav-link:focus,
+#header-wrap.fixed-header .navbar-nav .nav-link:hover, #header-wrap.fixed-header .navbar-nav .nav-link.active,
+.navbar-toggler{background: #ff5351;}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus, .navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-link.highlighted, #header-wrap.fixed-header .navbar-nav .nav-link.highlighted,
+.header-2 #header-wrap.fixed-header .navbar-nav .nav-link,
+.header-2 .navbar-nav .nav-link:hover, .header-2 .navbar-nav .nav-item .nav-link.active,
+.header-2 #header-wrap.fixed-header .search-button, .header-2 #header-wrap.fixed-header .navbar-nav .nav-link:hover, .header-2 #header-wrap.fixed-header .navbar-nav .nav-item .nav-link.active{color: #ffffff}
+
+}
